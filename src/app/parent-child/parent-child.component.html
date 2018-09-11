@@ -1,0 +1,8 @@
+<div class="panel panel-primary">
+  <div class="panel-heading" #head>父组件标题</div>
+  <div class="panel-body">
+    <button (click)="child.show()" class="btn btn-success">调用子组件方法</button>
+    <child #child panel-title="aaa" (change-heading)="head.innerHTML = $event"></child>
+    <brother></brother>
+  </div>
+</div>

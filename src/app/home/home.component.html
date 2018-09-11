@@ -1,0 +1,57 @@
+<div>
+  <i class="fa fa-user-circle fa-spin" aria-hidden="true" #admin></i>
+  <i class="fa fa-refresh fa-spin fa-3x fa-fw" aria-hidden="true"></i>
+  <span class="sr-only">Refreshing...</span>
+  
+  <i class="fa fa-cog fa-spin fa-3x fa-fw" aria-hidden="true"></i>
+  <span class="sr-only">Saving. Hang tight!</span>
+  <button class="btn btn-default" (click)="admin.classList.toggle('fa-spin')">stop</button>
+  <div class="panel panel-primary">
+    <div class="panel-heading">模板插值语法</div>
+    <div class="panel-body">
+      <div>1+1={{1+1}}</div>
+      <div>{{getValue()}}</div>
+    </div>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">模板引用变量</div>
+    <div class="panel-body">
+      <div><input type="text" #input></div>
+      <div>{{input.value}}</div>
+      <div><button (click)="show(input.value)">show</button></div>
+    </div>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">值绑定</div>
+    <div class="panel-body">
+      <div><img [src]="url"></div>
+      <button (click)="change()">change</button>
+    </div>
+  </div>  
+  <div class="panel panel-primary">
+      <div class="panel-heading">事件绑定</div>
+      <div class="panel-body">
+        <button (click)="test($event)">change</button>
+      </div>
+  </div>  
+  <div class="panel panel-primary">
+      <div class="panel-heading">双向绑定</div>
+      <div class="panel-body">
+        <div [style.font-size.px]="fontSize">duanlian</div>
+        <font-size [(size)]="fontSize"></font-size>
+      </div>
+  </div>
+  <div class="panel panel-primary">
+      <div class="panel-heading">NgModel</div>
+      <div class="panel-body">
+        <div><input [(ngModel)]="text"></div>
+        <p>{{text}}</p>
+      </div>
+  </div>      
+  <div class="panel panel-primary">
+      <div class="panel-heading">管道</div>
+      <div class="panel-body">
+        <div>{{currentTime|date:'yyyy-MM-dd HH:mm:ss'}}</div>
+      </div>
+  </div>      
+</div>

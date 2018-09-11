@@ -1,0 +1,9 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">{{heading}}</div>
+  <div class="panel-body">
+    <button (click)="modify()" class="btn btn-default">修改父组件属性</button>
+    <div>
+      <ul><li *ngFor="let item of items;let i=index;let odd=odd;" [class.odd]="odd">{{item}}</li></ul>
+    </div>
+  </div>
+</div>
